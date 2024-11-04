@@ -34,7 +34,7 @@ INSERT INTO Role (name) VALUES ('ROLE_ADMIN'), ('ROLE_USER');
 -- Insertar usuarios
 INSERT INTO User (username, password, enabled) VALUES
     ('admin', '$2b$12$yTDMkL5a2p.xtmM2zvt2Pu.Uat9EIYuPOdB9PRxyDL.3/S7iRzggm', true),
-    ('user', '$2b$12$0kZdwD6HqJxgGjJcLFLrduY5ej44LwcrC7.KCCfMuGagCxw7Xvdr2', true);
+    ('user', '<hashed_password>', true);
 
 -- Relacionar usuarios con roles
 INSERT INTO User_Role (user_id, role_id) VALUES

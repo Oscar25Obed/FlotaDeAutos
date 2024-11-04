@@ -37,3 +37,26 @@ CREATE TABLE Maintenance (
     FOREIGN KEY (vehicle_id) REFERENCES Vehicle(id)
 );
 
+-- Tabla Role para definir roles
+CREATE TABLE Role (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL UNIQUE
+);
+
+-- Tabla User para los usuarios
+CREATE TABLE User (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL,
+    enabled BOOLEAN DEFAULT TRUE
+);
+
+-- Tabla intermedia para la relación User-Role (muchos a muchos)
+CREATE TABLE User_Role (
+    user_id BIGINT,
+    role_id BIGINT,
+    FOREIGN KEY (user_id) REFERENCES User(id),
+    FOREIGN KEY (role_id) REFERENCES Role(id),
+    PRIMARY KEY (user_id, role_id)
+);
+
