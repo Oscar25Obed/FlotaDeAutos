@@ -20,4 +20,8 @@ public class VehicleService {
     public Vehicle save(Vehicle vehicle) {
         return vehicleRepository.save(vehicle);
     }
+
+    public Vehicle findByLicensePlate(String licensePlate) {
+        return vehicleRepository.findByLicensePlate(licensePlate);
+    }
 }

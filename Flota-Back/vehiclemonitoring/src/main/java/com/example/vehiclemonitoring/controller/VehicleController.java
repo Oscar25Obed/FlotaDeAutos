@@ -20,9 +20,22 @@ public class VehicleController {
         return vehicleService.findAll();
     }
 
+    @GetMapping("/{licensePlate}")
+    public Vehicle getVehicleByLicensePlate(@PathVariable String licensePlate) {
+        return vehicleService.findByLicensePlate(licensePlate);
+    }
+
     @PostMapping
     public Vehicle createVehicle(@RequestBody Vehicle vehicle) {
         return vehicleService.save(vehicle);
+    }
+
+    @PutMapping("/{licensePlate}")
+    public Vehicle updateVehicle(@PathVariable String licensePlate, @RequestBody Vehicle vehicle) {
+        Vehicle currentVehicle = getVehicleByLicensePlate(licensePlate);
+        currentVehicle.setMileage(vehicle.getMileage());
+        currentVehicle.setFuelConsumption(vehicle.getFuelConsumption());
+        return vehicleService.save(currentVehicle);
     }
 }
 
