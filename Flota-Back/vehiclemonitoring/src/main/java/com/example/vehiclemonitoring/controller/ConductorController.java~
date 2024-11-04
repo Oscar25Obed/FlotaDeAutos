@@ -1,0 +1,51 @@
+package com.example.vehiclemonitoring.controller;
+
+import com.example.vehiclemonitoring.model.Conductor;
+import com.example.vehiclemonitoring.service.ConductorService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/conductores")
+public class ConductorController {
+
+  @Autowired
+  private ConductorService conductorService;
+
+  @GetMapping
+  public List<Conductor> findAll() {
+    return conductorService.findAll();
+  }
+
+  @GetMapping("/{id}")
+  public Conductor findById(@PathVariable Long id) {
+    return conductorService.findById(id);
+  }
+
+  @PostMapping
+  public Conductor create(@RequestBody Conductor conductor) {
+    return conductorService.create(conductor);
+  }
+
+  @PutMapping("/{id}")
+  public Conductor update(@PathVariable Long id, @RequestBody Conductor conductor) {
+    Conductor existingConductor = conductorService.findById(id);
+    if (existingConductor != null) {
+      existingConductor.setNombre(conductor.getNombre());
+      existingConductor.setApellido(conductor.getApellido());
+      existingConductor.setLicencia(conductor.getLicencia());
+      existingConductor.setFechaVencimientoLicencia(conductor.getFechaVencimientoLicencia());
+      existingConductor.setTipoLicencia(conductor.getTipoLicencia());
+      return conductorService.update(existingConductor);
+    } else {
+      return null;
+    }
+  }
+
+  @DeleteMapping("/{id}")
+  public void delete(@PathVariable Long id) {
+    conductorService.delete(id);
+  }
+}

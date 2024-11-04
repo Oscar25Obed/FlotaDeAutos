@@ -1,3 +1,6 @@
+--Dropear las tablas
+DROP TABLE IF EXISTS `carmanagement`.`driver`, `carmanagement`.`maintenance`, `carmanagement`.`rental`, `carmanagement`.`role`, `carmanagement`.`user`, `carmanagement`.`user_role`, `carmanagement`.`vehicle`;
+
 -- Crear la tabla Vehicle primero
 CREATE TABLE Vehicle (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
@@ -11,9 +14,12 @@ CREATE TABLE Vehicle (
 
 -- Crear la tabla Driver
 CREATE TABLE Driver (
-    id BIGINT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
-    license_number VARCHAR(20) NOT NULL UNIQUE
+  id BIGINT PRIMARY KEY,
+  nombre VARCHAR(255) NOT NULL,
+  apellido VARCHAR(255) NOT NULL,
+  licencia VARCHAR(255) NOT NULL,
+  fecha_vencimiento_licencia DATE NOT NULL,
+  tipo_licencia VARCHAR(1) NOT NULL CHECK (tipo_licencia IN ('C', 'D', 'F', 'E'))
 );
 
 -- Crear la tabla Rental, que referencia a Vehicle y Driver

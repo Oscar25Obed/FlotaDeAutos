@@ -6,12 +6,12 @@ VALUES
     ('GHI789', 'Ford Focus', 2021, 'maintenance', 12000, 6.8),
     ('JKL012', 'Chevrolet Cruze', 2018, 'out_of_service', 45000, 7.5);
 
-INSERT INTO Driver (name, license_number)
+INSERT INTO Driver (id, nombre, apellido, licencia, fecha_vencimiento_licencia, tipo_licencia)
 VALUES
-    ('Juan Prez', 'LIC123456'),
-    ('Maria Gomez', 'LIC654321'),
-    ('Luis Torres', 'LIC789123'),
-    ('Ana Martinez', 'LIC321987');
+    (1, 'Juan', 'Prez', 'LIC123456', '2025-01-01', 'C'),
+    (2, 'Maria', 'Gomez', 'LIC654321', '2024-06-01', 'D'),
+    (3, 'Luis', 'Torres', 'LIC789123', '2023-12-01', 'E'),
+    (4, 'Ana', 'Martinez', 'LIC321987', '2025-03-01', 'F');
 
 
 INSERT INTO Rental (vehicle_id, driver_id, rental_date, return_date, total_distance)
