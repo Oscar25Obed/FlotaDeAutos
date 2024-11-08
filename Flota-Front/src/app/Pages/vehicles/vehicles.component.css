@@ -1,0 +1,149 @@
+body{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+}
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .form-section, .list-section {
+    background-color: #f9eaea;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+	background: red;
+	overflow: hidden;
+	background: white;
+	box-shadow: 5px 20px 50px #000;
+  }
+  
+  h3 {
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    color: #573b8a;
+	font-weight: bold;
+	outline: none;
+	border: none;
+    font-family: 'Jost', sans-serif;
+  }
+  
+  form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  form input {
+	width: 60%;
+	height: 10px;
+	background: #d4c2db;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 12px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .cancel-button, .submit-button, .edit-button {
+    background-color: #EB5081;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cancel-button {
+    background-color: #EB5081;
+  }
+  .cancel-button:hover{
+    background: #b3385f;
+    
+  }
+  
+  .submit-button {
+    background-color: #573b8a;
+    
+  }
+  .submit-button:hover{
+    background: #6d44b8;
+    
+  }
+  
+  .edit-button {
+    background-color: #573b8a;
+    margin-top: 10px;
+  }
+  .edit-button:hover{
+    background: #6d44b8;
+  }
+  
+  .list-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .list-section li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #573b8a;
+    color: white;
+    padding-top: 20px;
+    font-family: 'Jost', sans-serif;
+}
+
+.sidebar h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #575757;
+}
