@@ -14,7 +14,7 @@ CREATE TABLE Vehicle (
 
 -- Crear la tabla Driver
 CREATE TABLE Driver (
-  id BIGINT PRIMARY KEY,
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
   nombre VARCHAR(255) NOT NULL,
   apellido VARCHAR(255) NOT NULL,
   licencia VARCHAR(255) NOT NULL,
