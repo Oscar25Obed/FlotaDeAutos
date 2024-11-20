@@ -57,7 +57,7 @@ CREATE TABLE User (
     enabled BOOLEAN DEFAULT TRUE
 );
 
--- Tabla intermedia para la relación User-Role (muchos a muchos)
+-- Tabla intermedia para la relacion User-Role (muchos a muchos)
 CREATE TABLE User_Role (
     user_id BIGINT,
     role_id BIGINT,
