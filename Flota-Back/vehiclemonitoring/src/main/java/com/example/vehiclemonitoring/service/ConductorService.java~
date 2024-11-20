@@ -1,0 +1,4 @@
+package com.example.vehiclemonitoring.service;
+
+public class ConductorService {
+}

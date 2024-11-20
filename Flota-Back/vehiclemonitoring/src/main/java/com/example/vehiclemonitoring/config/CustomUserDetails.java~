@@ -1,0 +1,4 @@
+package com.example.vehiclemonitoring.model;
+
+public class CustomUserDetails {
+}
