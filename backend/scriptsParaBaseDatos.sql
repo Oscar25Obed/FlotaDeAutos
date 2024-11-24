@@ -1,6 +1,3 @@
--- Dropear las tablas
-DROP TABLE IF EXISTS `carmanagement`.`driver`, `carmanagement`.`maintenance`, `carmanagement`.`rental`, `carmanagement`.`role`, `carmanagement`.`user`, `carmanagement`.`user_role`, `carmanagement`.`vehicle`;
-
 -- Crear la tabla Vehicle primero
 CREATE TABLE Vehicle (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
@@ -103,13 +100,15 @@ VALUES
 
 -- Insertar roles
 INSERT INTO Role (name) VALUES ('ROLE_ADMIN'), ('ROLE_USER');
+-- Insertar usuario default
+INSERT INTO user (country, firstname, lastname, password, role, username)
+VALUES ('Panama', 'Jose', 'Camarena', '$2y$10$uHSK88vPUqAxA0OjKqINkuTFl4PhCMiNWYe2PNezfXULJh1errmzC', 'admin', 'jcamarena');
 
--- Insertar usuarios
-INSERT INTO User (username, password, enabled) VALUES
-    ('admin', '$2b$12$yTDMkL5a2p.xtmM2zvt2Pu.Uat9EIYuPOdB9PRxyDL.3/S7iRzggm', true),
-    ('user', '$2b$12$0kZdwD6HqJxgGjJcLFLrduY5ej44LwcrC7.KCCfMuGagCxw7Xvdr2', true);
+INSERT INTO user (country, firstname, lastname, password, role, username)
+VALUES ('Panama', 'Oscar', 'Perez', '$2y$10$uHSK88vPUqAxA0OjKqINkuTFl4PhCMiNWYe2PNezfXULJh1errmzC', 'admin', 'operez');
 
 -- Relacionar usuarios con roles
 INSERT INTO User_Role (user_id, role_id) VALUES
-    (1, 1), -- admin con ROLE_ADMIN
-    (2, 2); -- user con ROLE_USER
+    (1, 1),
+    (2, 1) -- admin con ROLE_ADMIN
+

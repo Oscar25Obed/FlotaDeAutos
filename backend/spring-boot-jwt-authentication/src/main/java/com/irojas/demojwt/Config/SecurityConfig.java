@@ -33,7 +33,12 @@ public class SecurityConfig {
               authRequest
                 .requestMatchers(HttpMethod.GET).permitAll()
                 .requestMatchers(HttpMethod.OPTIONS).permitAll()
+                .requestMatchers(HttpMethod.POST).permitAll()
+                .requestMatchers(HttpMethod.DELETE).permitAll()
+                .requestMatchers(HttpMethod.PUT).permitAll()
                 .requestMatchers("/auth/**").permitAll()
+                .requestMatchers(HttpMethod.POST,"/api/v1/admin/**").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.PUT, "/api/v1/us/**").hasAnyRole("USER", "ADMIN")
                 .anyRequest().authenticated()
                 )
             .sessionManagement(sessionManager->
