@@ -18,6 +18,7 @@ import { ErrorInterceptorService } from './services/auth/error-interceptor.servi
 import { VehiclesInfoComponent } from './pages/vehicles-info/vehicles-info.component';
 import { DriversInfoComponent } from './pages/drivers-info/drivers-info.component';
 import { ReportComponent } from './pages/report/report.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ReportComponent } from './pages/report/report.component';
     PersonalDetailsComponent,
     VehiclesInfoComponent,
     DriversInfoComponent,
-    ReportComponent
+    ReportComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
