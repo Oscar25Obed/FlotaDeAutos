@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping(value = "/api/v1/user")
+@RequestMapping(value = "/api/v1/admin/user")
 @RequiredArgsConstructor
 @CrossOrigin(origins = {"http://localhost:4200"})
 public class UserController {
