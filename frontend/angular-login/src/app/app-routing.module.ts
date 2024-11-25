@@ -10,7 +10,6 @@ const routes: Routes = [
   {path:'',redirectTo:'/inicio', pathMatch:'full'},
   {path:'inicio',component:DashboardComponent},
   {path:'iniciar-sesion',component:LoginComponent},
-  {path:'**',redirectTo:'/inicio', pathMatch:'full'},
   {path:'drivers-ingo',component:DriversInfoComponent},
   {path:'report',component:ReportComponent},
   {path:'vehicles-ingo',component:VehiclesInfoComponent}

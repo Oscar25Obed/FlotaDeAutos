@@ -30,9 +30,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     NavComponent,
     PersonalDetailsComponent,
     VehiclesInfoComponent,
-    DriversInfoComponent,
     ReportComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
