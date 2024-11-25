@@ -4,60 +4,36 @@
   <!-- Resto del contenido de tu aplicación -->
   
 <div class="container">
-    <div class="form-section">
-      <h3>Agregar Nuevo Vehículo</h3>
-      <form>
-        <label for="marca">Marca:</label>
-        <input type="text" id="marca" name="marca">
+  <div class="form-section">
+    <h3>Agregar Nuevo Vehículo</h3>
+    <form (ngSubmit)="onSubmit()">
+      <label for="placa">Placa:</label>
+      <input type="text" id="placa" name="placa">
   
-        <label for="modelo">Modelo:</label>
-        <input type="text" id="modelo" name="modelo">
+      <label for="modelo">Modelo:</label>
+      <input type="text" id="modelo" name="modelo">
   
-        <label for="anio">Año:</label>
-        <input type="date" id="anio" name="anio">
+      <label for="anio">Año:</label>
+      <input type="number" id="anio" name="anio" min="2000" max="2025" step="1">
   
-        <label for="vin">VIN:</label>
-        <input type="text" id="vin" name="vin">
-  
-        <label for="placa">Placa:</label>
-        <input type="text" id="placa" name="placa">
-  
-        <label for="estado">Estado:</label>
-        <input type="text" id="estado" name="estado">
-  
-        <div class="buttons">
-          <button type="button" class="cancel-button">Cancelar</button>
-          <button type="submit" class="submit-button">Enviar</button>
-        </div>
-      </form>
-    </div>
+      <label for="estado">Estado:</label>
+      <input type="text" id="estado" name="estado">
+      <label for="estado">Kilometraje:</label>
+      <input type="number" id="Kilometraje" name="estado">
+      <label for="estado">Consumo del Combustible:</label>
+      <input type="number" id="consumoCombustible" name="combustible" min="0">
+      <div class="buttons">
+        <button type="button" class="cancel-button">Cancelar</button>
+        <button type="submit" class="submit-button">Enviar</button>
+      </div>
+    </form>
+  </div>
   
     <div class="list-section">
       <h3>Lista de Vehículos:</h3>
       <ul>
-        <li>
-          <span>Vehículo 1</span>
-          <p>Mercedes-Benz, Sprinter, 2018, AB1234, Operativo...</p>
-          <button class="edit-button">Editar</button>
-        </li>
-        <li>
-          <span>Vehículo 2</span>
-          <p>Volvo, 9700, 2020, XY5678, En mantenimiento...</p>
-          <button class="edit-button">Editar</button>
-        </li>
-        <li>
-          <span>Vehículo 3</span>
-          <p>MAN, Lion's Coach, 2019, CD3456, Fuera de servicio...</p>
-          <button class="edit-button">Editar</button>
-        </li>
-        <li>
-          <span>Vehículo 4</span>
-          <p>Scania, K-Series, 2021, EF7890, Operativo...</p>
-          <button class="edit-button">Editar</button>
-        </li>
-        <li>
-          <span>Vehículo 5</span>
-          <p>Iveco, Crossway, 2017, GH9012, En revisión...</p>
+        <li *ngFor="let vehicle of vehicles">
+          <span>{{ vehicle.model }} {{ vehicle.year }}, {{ vehicle.licensePlate }}, {{ vehicle.status }}</span>
           <button class="edit-button">Editar</button>
         </li>
       </ul>

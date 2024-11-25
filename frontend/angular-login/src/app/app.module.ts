@@ -32,6 +32,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     VehiclesInfoComponent,
     ReportComponent,
     SidebarComponent,
+    DriversInfoComponent,
   ],
   imports: [
     BrowserModule,

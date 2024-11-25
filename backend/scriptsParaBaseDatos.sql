@@ -1,3 +1,10 @@
+CREATE USER 'application'@'%' IDENTIFIED BY 'Applic@ti0nC0nnection123';
+CREATE SCHEMA securitybd;
+GRANT SELECT, INSERT, UPDATE, DELETE ON securitybd.* TO 'application'@'%';
+FLUSH PRIVILEGES;
+
+
+
 -- Crear la tabla Vehicle primero
 CREATE TABLE Vehicle (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
@@ -67,7 +74,7 @@ CREATE TABLE User_Role (
     PRIMARY KEY (user_id, role_id)
 );
 
-
+SELECT * FROM Vehicle;
 -- Inserta datos en la tabla Vehicle
 INSERT INTO Vehicle (license_plate, model, year, status, mileage, fuel_consumption)
 VALUES
@@ -97,15 +104,15 @@ VALUES
     (3, '2024-02-10', 'Reparacion de la caja de cambios', 800.00),
     (2, '2024-03-15', 'Revision general y alineacion', 200.00),
     (4, '2024-04-01', 'Cambio de llantas', 400.00);
-
+Select * from user;
 -- Insertar roles
 INSERT INTO Role (name) VALUES ('ROLE_ADMIN'), ('ROLE_USER');
 -- Insertar usuario default
 INSERT INTO user (country, firstname, lastname, password, role, username) 
-VALUES ('Panama', 'Jose', 'Camarena', '$2y$10$uHSK88vPUqAxA0OjKqINkuTFl4PhCMiNWYe2PNezfXULJh1errmzC', 'admin', 'jcamarena');
+VALUES ('Panama', 'Jose', 'Camarena', '$2y$10$uHSK88vPUqAxA0OjKqINkuTFl4PhCMiNWYe2PNezfXULJh1errmzC', 'ADMIN', 'jcamarena');
 
 INSERT INTO user (country, firstname, lastname, password, role, username) 
-VALUES ('Panama', 'Oscar', 'Perez', '$2y$10$uHSK88vPUqAxA0OjKqINkuTFl4PhCMiNWYe2PNezfXULJh1errmzC', 'admin', 'operez');
+VALUES ('Panama', 'Oscar', 'Perez', '$2y$10$uHSK88vPUqAxA0OjKqINkuTFl4PhCMiNWYe2PNezfXULJh1errmzC', 'ADMIN', 'operez');
 
 -- Relacionar usuarios con roles
 INSERT INTO User_Role (user_id, role_id) VALUES
