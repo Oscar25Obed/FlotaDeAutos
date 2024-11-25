@@ -3,6 +3,7 @@ package com.irojas.demojwt.User;
 import java.util.Collection;
 import java.util.List;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -30,16 +31,29 @@ import lombok.NoArgsConstructor;
 public class User implements UserDetails {
     @Id
     @GeneratedValue
+    @Schema(description = "ID único del usuario", example = "1")
     Integer id;
+
     @Basic
     @Column(nullable = false)
+    @Schema(description = "Nombre de usuario", example = "johndoe", required = true)
     String username;
+
     @Column(nullable = false)
+    @Schema(description = "Apellido del usuario", example = "Doe", required = true)
     String lastname;
+
+    @Schema(description = "Nombre del usuario", example = "John")
     String firstname;
+
+    @Schema(description = "País del usuario", example = "Panamá")
     String country;
+
+    @Schema(description = "Contraseña del usuario", example = "P@ssw0rd")
     String password;
-    @Enumerated(EnumType.STRING) 
+
+    @Enumerated(EnumType.STRING)
+    @Schema(description = "Rol del usuario", example = "ADMIN")
     Role role;
 
     @Override
