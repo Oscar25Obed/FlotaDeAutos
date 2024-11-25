@@ -28,7 +28,7 @@ CREATE TABLE Rental (
     return_date DATE,
     total_distance INT DEFAULT 0,
     FOREIGN KEY (vehicle_id) REFERENCES Vehicle(id),
-    FOREIGN KEY (driver_id) REFERENCES Driver(id)
+    FOREIGN KEY (driver_id) REFERENCES Driver(id) ON DELETE CASCADE
 );
 
 CREATE TABLE Maintenance (
@@ -101,10 +101,10 @@ VALUES
 -- Insertar roles
 INSERT INTO Role (name) VALUES ('ROLE_ADMIN'), ('ROLE_USER');
 -- Insertar usuario default
-INSERT INTO user (country, firstname, lastname, password, role, username)
+INSERT INTO user (country, firstname, lastname, password, role, username) 
 VALUES ('Panama', 'Jose', 'Camarena', '$2y$10$uHSK88vPUqAxA0OjKqINkuTFl4PhCMiNWYe2PNezfXULJh1errmzC', 'admin', 'jcamarena');
 
-INSERT INTO user (country, firstname, lastname, password, role, username)
+INSERT INTO user (country, firstname, lastname, password, role, username) 
 VALUES ('Panama', 'Oscar', 'Perez', '$2y$10$uHSK88vPUqAxA0OjKqINkuTFl4PhCMiNWYe2PNezfXULJh1errmzC', 'admin', 'operez');
 
 -- Relacionar usuarios con roles
