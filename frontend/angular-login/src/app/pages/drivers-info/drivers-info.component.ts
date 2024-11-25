@@ -17,5 +17,21 @@ export class DriversInfoComponent implements OnInit {
       this.drivers = response;
     });
   }
+  searchDriverById(id: number): void {
+    this.driverService.searchDriversBy(id).subscribe((response: any) => {
+      console.log('Search Result:', response);
+    });
+  }
 
+  createDriver(driver: Driver): void {
+    this.driverService.createDriver(driver).subscribe((response: any) => {
+      console.log('Driver Created:', response);
+    });
+  }
+
+  updateDriver(driver: Driver): void {
+    this.driverService.updateDriver(driver).subscribe((response: any) => {
+      console.log('Driver Updated:', response);
+    });
+  }
 }

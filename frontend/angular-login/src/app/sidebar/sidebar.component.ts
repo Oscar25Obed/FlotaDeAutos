@@ -23,6 +23,7 @@ export class SidebarComponent implements OnInit {
 
   logout()
   {
+    sessionStorage.removeItem("token");
     this.loginService.logout();
     this.router.navigate(['/iniciar-sesion']);
   }
